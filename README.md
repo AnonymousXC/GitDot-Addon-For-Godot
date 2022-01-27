@@ -14,6 +14,7 @@
         <li>It only works in windows</li>
         <li>It is not tested by me.</li>
         <li>I Hope U all test it and revive it.</li>
+        <li> <a href="https://anonymousxcv.itch.io/gitdot"> Check This out on Itch </a></li>
         <li>Hope it works!</li>
         <li>Enjoy!!😊🔥</li>
     </ul>

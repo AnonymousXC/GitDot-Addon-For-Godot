@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/gitdot/panel.gd" type="Script" id=1]
+
+[node name="Main" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Initailize" type="Button" parent="."]
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "Initailize Repo"
+
+[node name="Push" type="HBoxContainer" parent="."]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 44.0
+
+[node name="Push Btn" type="Button" parent="Push"]
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Push"
+
+[node name="Get Status" type="Button" parent="."]
+margin_top = 48.0
+margin_right = 1024.0
+margin_bottom = 68.0
+text = "Get Repo Status"
+
+[node name="Clone Container" type="HBoxContainer" parent="."]
+margin_top = 72.0
+margin_right = 1024.0
+margin_bottom = 96.0
+
+[node name="Link" type="LineEdit" parent="Clone Container"]
+margin_right = 936.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Link"
+
+[node name="Clone Btn" type="Button" parent="Clone Container"]
+margin_left = 940.0
+margin_right = 1024.0
+margin_bottom = 24.0
+text = "Clone Repo"
+
+[node name="Add Container" type="HBoxContainer" parent="."]
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 124.0
+
+[node name="Files" type="LineEdit" parent="Add Container"]
+margin_right = 949.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "File name or .(for all files)"
+
+[node name="Add Button" type="Button" parent="Add Container"]
+margin_left = 953.0
+margin_right = 1024.0
+margin_bottom = 24.0
+text = "Add Files"
+
+[node name="Commit Container" type="HBoxContainer" parent="."]
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 152.0
+
+[node name="LineEdit" type="LineEdit" parent="Commit Container"]
+margin_right = 900.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Commit Message"
+
+[node name="Commit Button" type="Button" parent="Commit Container"]
+margin_left = 904.0
+margin_right = 1024.0
+margin_bottom = 24.0
+text = "Commit Changes"
+
+[node name="Pull" type="HBoxContainer" parent="."]
+margin_top = 156.0
+margin_right = 1024.0
+margin_bottom = 180.0
+
+[node name="Pull Link" type="LineEdit" parent="Pull"]
+margin_right = 984.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Pull Link"
+
+[node name="Pull Button" type="Button" parent="Pull"]
+margin_left = 988.0
+margin_right = 1024.0
+margin_bottom = 24.0
+text = "Pull"
+
+[node name="Pull Self Repo" type="Button" parent="."]
+margin_top = 184.0
+margin_right = 1024.0
+margin_bottom = 204.0
+text = "Pull Self Repo"
+
+[connection signal="pressed" from="Initailize" to="." method="_on_Initailize_pressed"]
+[connection signal="pressed" from="Push/Push Btn" to="." method="_on_Push_Btn_pressed"]
+[connection signal="pressed" from="Get Status" to="." method="_on_Get_Status_pressed"]
+[connection signal="pressed" from="Clone Container/Clone Btn" to="." method="_on_Clone_Btn_pressed"]
+[connection signal="pressed" from="Add Container/Add Button" to="." method="_on_Add_Button_pressed"]
+[connection signal="pressed" from="Commit Container/Commit Button" to="." method="_on_Commit_Button_pressed"]
+[connection signal="pressed" from="Pull/Pull Button" to="." method="_on_Pull_Button_pressed"]
+[connection signal="pressed" from="Pull Self Repo" to="." method="_on_Pull_Self_Repo_pressed"]

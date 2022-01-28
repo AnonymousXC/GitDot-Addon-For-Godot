@@ -5,6 +5,8 @@
 [node name="Main" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -13,7 +15,7 @@ __meta__ = {
 [node name="Initailize" type="Button" parent="."]
 margin_right = 1024.0
 margin_bottom = 20.0
-text = "Initailize Repo"
+text = "Initialize Repo"
 
 [node name="Push" type="HBoxContainer" parent="."]
 margin_top = 24.0
@@ -57,17 +59,17 @@ margin_right = 1024.0
 margin_bottom = 124.0
 
 [node name="Files" type="LineEdit" parent="Add Container"]
-margin_right = 949.0
+margin_right = 940.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 placeholder_text = "File name or .(for all files)"
 
 [node name="Add Button" type="Button" parent="Add Container"]
-margin_left = 953.0
+margin_left = 944.0
 margin_right = 1024.0
 margin_bottom = 24.0
-text = "Add Files"
+text = "Stage Files"
 
 [node name="Commit Container" type="HBoxContainer" parent="."]
 margin_top = 128.0
@@ -87,29 +89,77 @@ margin_right = 1024.0
 margin_bottom = 24.0
 text = "Commit Changes"
 
-[node name="Pull" type="HBoxContainer" parent="."]
+[node name="Show Diff" type="HBoxContainer" parent="."]
 margin_top = 156.0
 margin_right = 1024.0
-margin_bottom = 180.0
+margin_bottom = 176.0
 
-[node name="Pull Link" type="LineEdit" parent="Pull"]
-margin_right = 984.0
-margin_bottom = 24.0
+[node name="Diff Btn" type="Button" parent="Show Diff"]
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Show Diff."
+
+[node name="Unstage File" type="HBoxContainer" parent="."]
+margin_top = 180.0
+margin_right = 1024.0
+margin_bottom = 200.0
+
+[node name="Unstage Btn" type="Button" parent="Unstage File"]
+margin_right = 510.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Unstage Files"
+
+[node name="Pull Self Repo" type="Button" parent="Unstage File"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Pull Self Repo"
+
+[node name="Output Options" type="HBoxContainer" parent="."]
+margin_top = 204.0
+margin_right = 1024.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Edited File" type="Button" parent="Output Options"]
+margin_right = 510.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Get Edited File Name"
+
+[node name="Clear Btn" type="Button" parent="Output Options"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Clear Output"
+
+[node name="Output" type="TextEdit" parent="."]
+margin_top = 228.0
+margin_right = 1024.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-placeholder_text = "Pull Link"
-
-[node name="Pull Button" type="Button" parent="Pull"]
-margin_left = 988.0
-margin_right = 1024.0
-margin_bottom = 24.0
-text = "Pull"
-
-[node name="Pull Self Repo" type="Button" parent="."]
-margin_top = 184.0
-margin_right = 1024.0
-margin_bottom = 204.0
-text = "Pull Self Repo"
+custom_colors/safe_line_number_color = Color( 0.815686, 0.109804, 0.109804, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/line_number_color = Color( 1, 1, 1, 1 )
+custom_colors/background_color = Color( 0, 0, 0, 1 )
+text = "Output :
+"
+readonly = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+smooth_scrolling = true
+minimap_draw = true
+minimap_width = 100
+caret_block_mode = true
+caret_blink = true
 
 [connection signal="pressed" from="Initailize" to="." method="_on_Initailize_pressed"]
 [connection signal="pressed" from="Push/Push Btn" to="." method="_on_Push_Btn_pressed"]
@@ -117,5 +167,8 @@ text = "Pull Self Repo"
 [connection signal="pressed" from="Clone Container/Clone Btn" to="." method="_on_Clone_Btn_pressed"]
 [connection signal="pressed" from="Add Container/Add Button" to="." method="_on_Add_Button_pressed"]
 [connection signal="pressed" from="Commit Container/Commit Button" to="." method="_on_Commit_Button_pressed"]
-[connection signal="pressed" from="Pull/Pull Button" to="." method="_on_Pull_Button_pressed"]
-[connection signal="pressed" from="Pull Self Repo" to="." method="_on_Pull_Self_Repo_pressed"]
+[connection signal="pressed" from="Show Diff/Diff Btn" to="." method="_on_Diff_Btn_pressed"]
+[connection signal="pressed" from="Unstage File/Unstage Btn" to="." method="_on_Unstage_Btn_pressed"]
+[connection signal="pressed" from="Unstage File/Pull Self Repo" to="." method="_on_Pull_Self_Repo_pressed"]
+[connection signal="pressed" from="Output Options/Edited File" to="." method="_on_Edited_File_pressed"]
+[connection signal="pressed" from="Output Options/Clear Btn" to="." method="_on_Clear_Btn_pressed"]

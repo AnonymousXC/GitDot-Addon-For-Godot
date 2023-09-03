@@ -19,11 +19,6 @@
         <li>Enjoy!!😊🔥</li>
     </ul>
     <h2>About Me.</h2>
-    <p>I am an 12 < x > 17 years old :- </p>
-    <ul>
-      <li>Indie Game Developer</li>
-      <li>Indie Web Developer</li>
-      <li>Indie App Developer</li>
-    </ul>
+    Check my profile.
 </body>
 </html>

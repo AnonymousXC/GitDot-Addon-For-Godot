@@ -1,174 +1,142 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://ql7w3flvexrh"]
 
-[ext_resource path="res://addons/gitdot/panel.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://addons/gitdot/panel.gd" id="1"]
 
-[node name="Main" type="VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer"]
+custom_minimum_size = Vector2(600, 250)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 
-[node name="Initailize" type="Button" parent="."]
-margin_right = 1024.0
-margin_bottom = 20.0
+[node name="Initailize" type="Button" parent="Main"]
+layout_mode = 2
 text = "Initialize Repo"
 
-[node name="Push" type="HBoxContainer" parent="."]
-margin_top = 24.0
-margin_right = 1024.0
-margin_bottom = 44.0
+[node name="Push" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="Push Btn" type="Button" parent="Push"]
-margin_right = 1024.0
-margin_bottom = 20.0
+[node name="Push Btn" type="Button" parent="Main/Push"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Push"
 
-[node name="Get Status" type="Button" parent="."]
-margin_top = 48.0
-margin_right = 1024.0
-margin_bottom = 68.0
+[node name="Get Status" type="Button" parent="Main"]
+layout_mode = 2
 text = "Get Repo Status"
 
-[node name="Clone Container" type="HBoxContainer" parent="."]
-margin_top = 72.0
-margin_right = 1024.0
-margin_bottom = 96.0
+[node name="Clone Container" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="Link" type="LineEdit" parent="Clone Container"]
-margin_right = 936.0
-margin_bottom = 24.0
+[node name="Link" type="LineEdit" parent="Main/Clone Container"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 placeholder_text = "Link"
+caret_blink = true
+caret_blink_interval = 0.5
 
-[node name="Clone Btn" type="Button" parent="Clone Container"]
-margin_left = 940.0
-margin_right = 1024.0
-margin_bottom = 24.0
+[node name="Clone Btn" type="Button" parent="Main/Clone Container"]
+layout_mode = 2
 text = "Clone Repo"
 
-[node name="Add Container" type="HBoxContainer" parent="."]
-margin_top = 100.0
-margin_right = 1024.0
-margin_bottom = 124.0
+[node name="Add Container" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="Files" type="LineEdit" parent="Add Container"]
-margin_right = 940.0
-margin_bottom = 24.0
+[node name="Files" type="LineEdit" parent="Main/Add Container"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 placeholder_text = "File name or .(for all files)"
+caret_blink = true
+caret_blink_interval = 0.5
 
-[node name="Add Button" type="Button" parent="Add Container"]
-margin_left = 944.0
-margin_right = 1024.0
-margin_bottom = 24.0
+[node name="Add Button" type="Button" parent="Main/Add Container"]
+layout_mode = 2
 text = "Stage Files"
 
-[node name="Commit Container" type="HBoxContainer" parent="."]
-margin_top = 128.0
-margin_right = 1024.0
-margin_bottom = 152.0
+[node name="Commit Container" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Commit Container"]
-margin_right = 900.0
-margin_bottom = 24.0
+[node name="LineEdit" type="LineEdit" parent="Main/Commit Container"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 placeholder_text = "Commit Message"
+caret_blink = true
+caret_blink_interval = 0.5
 
-[node name="Commit Button" type="Button" parent="Commit Container"]
-margin_left = 904.0
-margin_right = 1024.0
-margin_bottom = 24.0
+[node name="Commit Button" type="Button" parent="Main/Commit Container"]
+layout_mode = 2
 text = "Commit Changes"
 
-[node name="Show Diff" type="HBoxContainer" parent="."]
-margin_top = 156.0
-margin_right = 1024.0
-margin_bottom = 176.0
+[node name="Show Diff" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="Diff Btn" type="Button" parent="Show Diff"]
-margin_right = 1024.0
-margin_bottom = 20.0
+[node name="Diff Btn" type="Button" parent="Main/Show Diff"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Show Diff."
 
-[node name="Unstage File" type="HBoxContainer" parent="."]
-margin_top = 180.0
-margin_right = 1024.0
-margin_bottom = 200.0
+[node name="Unstage File" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="Unstage Btn" type="Button" parent="Unstage File"]
-margin_right = 510.0
-margin_bottom = 20.0
+[node name="Unstage Btn" type="Button" parent="Main/Unstage File"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Unstage Files"
 
-[node name="Pull Self Repo" type="Button" parent="Unstage File"]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 20.0
+[node name="Pull Self Repo" type="Button" parent="Main/Unstage File"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Pull Self Repo"
 
-[node name="Output Options" type="HBoxContainer" parent="."]
-margin_top = 204.0
-margin_right = 1024.0
-margin_bottom = 224.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Output Options" type="HBoxContainer" parent="Main"]
+layout_mode = 2
 
-[node name="Edited File" type="Button" parent="Output Options"]
-margin_right = 510.0
-margin_bottom = 20.0
+[node name="Edited File" type="Button" parent="Main/Output Options"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Get Edited File Name"
 
-[node name="Clear Btn" type="Button" parent="Output Options"]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 20.0
+[node name="Clear Btn" type="Button" parent="Main/Output Options"]
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Clear Output"
 
-[node name="Output" type="TextEdit" parent="."]
-margin_top = 228.0
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="Output" type="TextEdit" parent="Main"]
+clip_contents = true
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_colors/safe_line_number_color = Color( 0.815686, 0.109804, 0.109804, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/line_number_color = Color( 1, 1, 1, 1 )
-custom_colors/background_color = Color( 0, 0, 0, 1 )
+focus_mode = 0
 text = "Output :
 "
-readonly = true
-syntax_highlighting = true
-show_line_numbers = true
+editable = false
 draw_tabs = true
-smooth_scrolling = true
+scroll_smooth = true
 minimap_draw = true
 minimap_width = 100
-caret_block_mode = true
 caret_blink = true
 
-[connection signal="pressed" from="Initailize" to="." method="_on_Initailize_pressed"]
-[connection signal="pressed" from="Push/Push Btn" to="." method="_on_Push_Btn_pressed"]
-[connection signal="pressed" from="Get Status" to="." method="_on_Get_Status_pressed"]
-[connection signal="pressed" from="Clone Container/Clone Btn" to="." method="_on_Clone_Btn_pressed"]
-[connection signal="pressed" from="Add Container/Add Button" to="." method="_on_Add_Button_pressed"]
-[connection signal="pressed" from="Commit Container/Commit Button" to="." method="_on_Commit_Button_pressed"]
-[connection signal="pressed" from="Show Diff/Diff Btn" to="." method="_on_Diff_Btn_pressed"]
-[connection signal="pressed" from="Unstage File/Unstage Btn" to="." method="_on_Unstage_Btn_pressed"]
-[connection signal="pressed" from="Unstage File/Pull Self Repo" to="." method="_on_Pull_Self_Repo_pressed"]
-[connection signal="pressed" from="Output Options/Edited File" to="." method="_on_Edited_File_pressed"]
-[connection signal="pressed" from="Output Options/Clear Btn" to="." method="_on_Clear_Btn_pressed"]
+[connection signal="pressed" from="Main/Initailize" to="Main" method="_on_Initailize_pressed"]
+[connection signal="pressed" from="Main/Push/Push Btn" to="Main" method="_on_Push_Btn_pressed"]
+[connection signal="pressed" from="Main/Get Status" to="Main" method="_on_Get_Status_pressed"]
+[connection signal="pressed" from="Main/Clone Container/Clone Btn" to="Main" method="_on_Clone_Btn_pressed"]
+[connection signal="pressed" from="Main/Add Container/Add Button" to="Main" method="_on_Add_Button_pressed"]
+[connection signal="pressed" from="Main/Commit Container/Commit Button" to="Main" method="_on_Commit_Button_pressed"]
+[connection signal="pressed" from="Main/Show Diff/Diff Btn" to="Main" method="_on_Diff_Btn_pressed"]
+[connection signal="pressed" from="Main/Unstage File/Unstage Btn" to="Main" method="_on_Unstage_Btn_pressed"]
+[connection signal="pressed" from="Main/Unstage File/Pull Self Repo" to="Main" method="_on_Pull_Self_Repo_pressed"]
+[connection signal="pressed" from="Main/Output Options/Edited File" to="Main" method="_on_Edited_File_pressed"]
+[connection signal="pressed" from="Main/Output Options/Clear Btn" to="Main" method="_on_Clear_Btn_pressed"]

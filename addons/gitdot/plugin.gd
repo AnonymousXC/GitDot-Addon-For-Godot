@@ -1,4 +1,4 @@
-tool
+@tool
 extends EditorPlugin
 
 
@@ -8,8 +8,8 @@ var main_panel_instance
 
 
 func _enter_tree():
-	main_panel_instance = MainPanel.instance()
-	get_editor_interface().get_editor_viewport().add_child(main_panel_instance)
+	main_panel_instance = MainPanel.instantiate()
+	add_control_to_bottom_panel(main_panel_instance, "Gitdot")
 	make_visible(false)
 
 
